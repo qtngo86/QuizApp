@@ -1,4 +1,6 @@
 //
+// TODO: Should also change file name to QuizViewController. In general, File name and class name should be the same
+// to increase readibility
 //  ViewController.swift
 //  QuizApp
 //
@@ -10,6 +12,7 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    // TODO: all of these IBOutlet could be private
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,13 +23,14 @@ class QuizViewController: UIViewController {
     
     @IBOutlet weak var rootStackView: UIStackView!
     
-
+    // TODO: here too, private
     var model = QuizModel()
     var questions = [Question]()
     var currentQuestionIndex = 0
     var numCorrect = 0
     
-    
+    // TODO: avoid typo mistake => ResultViewController, not ResultViewCOntroller
+    // TODO: as coding guideline, use a space after ":". Ex: var resultDialog: ResultViewController?
     // ResultViewCOntroller type --
     var resultDialog:ResultViewController?
     
@@ -90,6 +94,7 @@ class QuizViewController: UIViewController {
         
     }
     
+    // TODO: private
     func displayQuestion() {
         
         // Check if there are questions and check that the currentQuestionIndex is not out of bounds
@@ -110,6 +115,8 @@ class QuizViewController: UIViewController {
     
 }
 
+// TODO: Break into 2 extensions for each protocol.
+// TODO: Put the MARK here, just before extension declaration
 extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UITableView Delegate Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -192,6 +199,8 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// TODO: here too, break into 2 extensions for each protocol.
+// TODO: Put the MARK here, just before extension declaration
 extension QuizViewController: QuizProtocol, ResultViewControllerProtocol {
     // MARK: - QuizProtocol Methods
     
