@@ -1,0 +1,21 @@
+Git:
+		Use .gitignore to ignore xcuserdata from git repo. xcuserdata contains personal config data from xcode
+
+Project:
+		Avoid having warnings after compilation, right now we have 4 warnings in the assets icons
+		Clean up useless assets, code, function, variables… (ex: getLocalJsonFile, QuestionData.json)
+		Prefer struct over class, when it’s reasonable (ex: QuizModel should be struct). Todo: learn about different between Struct & Class
+		Take care of accessibility variable (using private as much as possible). It helps improve readability since reader knows if a variable used only in the scope of current class. It also improve build speed since private won't need to be exposed in header file
+		Override function, in general, must have super (ex: super.viewWillAppear())
+		Delegate variable should be weak (ex: weak var delegate: ResultViewControllerProtocol) to avoid memory leak. Todo: learn about weak & strong & unowned
+		Async process callback should check existing of self, so we usually use weak self to prevent memory leak. Ex UIView.animate(…) { [weak self] completed in …}
+		Avoid bundling all protocol conformance in one big implementation. Ex: ViewController can be split in extension ViewController: UITableViewDelegate & extension ViewController: UITableViewDataSource…etc.
+		Should use name that self explain for classes, variables, protocol…etc Ex: ViewController could be renamed to QuizViewController
+		Clean up useless input parameter by default: ex: completion: nil could be removed since it has default value nil already
+
+Next Steps:
+	Use MVVM instead of MVC
+	Make answer cell a separate custom view cell
+	Localization of text
+	Add Unit/UI tests
+	Work on real interview test project
